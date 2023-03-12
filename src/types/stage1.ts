@@ -16,14 +16,13 @@ export function add(a: number, b: number, c: number = 0): number {
 }
 
 //rest parameters
-export function getAverage(...a : number[]) : string {
+export function getAverage(...a: number[]): string {
     let count = a.length;
     let total = 0;
-    for(let i=0; i< a.length;i++)
-    {
+    for (let i = 0; i < a.length; i++) {
         total += a[i];
     }
-    
-    const average = total/count;
+
+    const average = total / count;
     return 'The average is ' + average;
 }

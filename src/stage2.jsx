@@ -4,6 +4,7 @@ let sumPrices = (first, second, third) => {
     return first + second + third
 }
 
+
 function run1() {
     let firstCity;
     let secondCity = firstCity || "Bordeaux"
@@ -22,6 +23,10 @@ function run2(){
     totalPrice = sumPrices(330,750);
     console.log(`total: ${totalPrice}, type: ${typeof totalPrice}`);
     
+}
+
+function run3(){
+
 }
 
 export default function Stage2() {

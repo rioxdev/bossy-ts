@@ -9,10 +9,10 @@ let calculateTax = (amount: any): any => {
 let run1 = () => {
     let salary = 100
     let taxedSalary = calculateTax(salary)
-    let halfSalary = taxedSalary / 2
+    let halfSalary = (taxedSalary / 2).toFixed(2)
 
     console.log("taxedSalary: ", taxedSalary)
-    console.log("half salary: ",halfSalary)
+    console.log("half salary: ", halfSalary)
 }
 
 export default function Stage3() {

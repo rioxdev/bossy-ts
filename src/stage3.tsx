@@ -87,7 +87,7 @@ let run4 = () => {
                 writePrice('hat', prod[1])
                 break;
             case Product.Umbrella:
-                writePrice('umbrella', prod[1])
+                writePrice('umbrella', prod[1]) 
                 break;
         }
 
@@ -95,7 +95,7 @@ let run4 = () => {
 }
 
 let run5 = () => {
-    console.log('run 5')
+    console.log('run 5') 
 
     let taxNumber = calculateTaxFormated(100, false)
     let taxString = calculateTaxFormated(100, true)

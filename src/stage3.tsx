@@ -5,6 +5,11 @@ let calculateTax = (amount: any): any => {
     return (amount * 1.2).toFixed(2)
 }
 
+let calculateTaxFormated = (amount: number, format: boolean): string | number => {
+    let result = amount * 1.2
+    return format ? result.toFixed(2) : result
+}
+
 let writePrice = (product: string, price: number): void => {
     console.log(`Price for ${product}: $${price.toFixed(2)}`)
 }
@@ -89,6 +94,23 @@ let run4 = () => {
     })
 }
 
+let run5 = () => {
+    console.log('run 5')
+
+    let taxNumber = calculateTaxFormated(100, false)
+    let taxString = calculateTaxFormated(100, true)
+    console.log(taxNumber.toString())
+    console.log(taxString.toString())
+    console.log((taxNumber as number).toFixed(3))
+    console.log((taxString as string).charAt(1))
+
+    let taxValue = calculateTaxFormated(250, true)
+    if (typeof taxValue == 'number')
+        console.log('nubmer value')
+    else
+        console.log('string value')
+}
+
 export default function Stage3() {
 
     useEffect(() => {
@@ -96,7 +118,8 @@ export default function Stage3() {
         // run1()
         // run2()
         // run3()
-        run4()
+        // run4()
+        run5()
     }, [])
 
     return (

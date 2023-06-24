@@ -7,6 +7,7 @@ import Stage1 from './stage1';
 import Stage2 from './stage2';
 import Stage3 from './stage3';
 import Stage4 from './stage4';
+import Stage5 from './stage5';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <>
       <div className="App">
 
-        <Stage4 />
+        <Stage5 />
 
       </div>
     </>

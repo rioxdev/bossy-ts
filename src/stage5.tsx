@@ -13,6 +13,11 @@ type Person = {
     city: string
 }
 
+type UnionType = {
+    id: number | string
+    name: string
+}
+
 let run1 = () => {
     console.log('run 1')
 
@@ -35,7 +40,17 @@ let run1 = () => {
     }
 
     let data: (Product | Person)[] = [hat, toto, tata]
-    data.forEach(item => console.log(`${item.id} - ${item.name}`))
+    data.forEach(item => console.log(`${item.id} - ${item.name}, is Person: ${'city' in item}`))
+
+    let riox: Person = {
+        id: 'rx',
+        name: 'Riox',
+        city: 'Bdx'
+    }
+
+    let data2: UnionType[] = [hat, toto, tata, riox]
+    data2.forEach(item => console.log(`${item.id} , ${item.name}, Type: ${typeof item}`))
+
 }
 
 export default function Stage6() {

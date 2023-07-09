@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import { useEffect } from "react";
 
 type Product = {
@@ -18,7 +17,14 @@ type UnionType = {
     name: string
 }
 
+type Employee = {
+    company: string
+    dept: string
+}
+
+
 let run1 = () => {
+    console.log('-------------------------------------------')
     console.log('run 1')
 
     let hat: Product = {
@@ -53,12 +59,74 @@ let run1 = () => {
 
 }
 
-export default function Stage6() {
+function isPerson(testObj: any): testObj is Person {
+    return testObj.city != undefined
+}
+
+let run2 = () => {
+
+    console.log('-------------------------------------------')
+    console.log('run 2')
+
+    let galaxyS23: Product = {
+        id: 1,
+        name: 'galaxy S23',
+        price: 1200
+    }
+
+    let dupont: Person = {
+        id: '1',
+        name: 'Dupont',
+        city: 'Bordeaux'
+    }
+
+    let data: (Product | Person)[] = [galaxyS23, dupont]
+
+    data.forEach(item => {
+        if (isPerson(item))
+            console.log(`Person: ${item.name} - ${item.city}`)
+        else
+            console.log(`Product: ${item.name} - ${item.price}`)
+    })
+
+}
+
+let run3 = () => {
+    console.log('-------------------------------------------')
+    console.log('run 3')
+
+    let bob: Person & Employee = {
+        id: '1',
+        name: 'Bob',
+        city: 'London',
+        company: 'Uber',
+        dept: 'IT'
+    }
+
+    let anna ={
+        id: 1 + '',
+        name: 'Anna',
+        city: 'Paris',
+        company: 'Engie',
+        dept: 'Sale'
+    }
+
+    let data: (Person & Employee)[] = [bob, anna]
+    data.forEach(item => {
+        console.log(`Person: ${item.name}`)
+        console.log(`Employe: ${item.company}`)
+    })
+
+}
+
+export default function Stage5() {
 
     useEffect(() => {
         console.log('Stage 5')
 
         run1()
+        run2()
+        run3()
 
     }, [])
 

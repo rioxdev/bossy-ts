@@ -59,9 +59,7 @@ let run1 = () => {
 
 }
 
-function isPerson(testObj: any): testObj is Person {
-    return testObj.city != undefined
-}
+let isPerson = (obj: any): obj is Person => obj.city != undefined
 
 let run2 = () => {
 
@@ -103,8 +101,8 @@ let run3 = () => {
         dept: 'IT'
     }
 
-    let anna ={
-        id: 1 + '',
+    let anna = {
+        id: 2 + '',
         name: 'Anna',
         city: 'Paris',
         company: 'Engie',
@@ -113,6 +111,7 @@ let run3 = () => {
 
     let data: (Person & Employee)[] = [bob, anna]
     data.forEach(item => {
+        console.log(`id: ${item.id}`)
         console.log(`Person: ${item.name}`)
         console.log(`Employe: ${item.company}`)
     })
@@ -124,8 +123,8 @@ export default function Stage5() {
     useEffect(() => {
         console.log('Stage 5')
 
-        run1()
-        run2()
+        // run1()
+        // run2()
         run3()
 
     }, [])
